@@ -1,26 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress 
 metadata:
-  name: test-ingress-2
+  name: test-ingress-3
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
-  - host: ms12.dev
+  - host: ms1-helm.dev
     http:
       paths:
-      - path: /api/ms1
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: ms1-srv
-            port: 
-              number: 4000
-      - path: /api/ms2
-        pathType: Prefix
-        backend:
-          service:
-            name: ms2-srv
             port: 
               number: 4000
